@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "TokiToki User Account and Profile Information",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase user authentication unique ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the user"
+        },
+        "handle": {
+          "type": "string",
+          "description": "Unique username / Login handle (e.g. @toki_user)"
+        },
+        "email": {
+          "type": "string",
+          "description": "User registered email address"
+        },
+        "bio": {
+          "type": "string",
+          "description": "Creator bio summary"
+        },
+        "avatar": {
+          "type": "string",
+          "description": "User profile avatar picture URL"
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "Whether creator has verified status"
+        },
+        "followersCount": {
+          "type": "number",
+          "description": "Total followers count"
+        },
+        "followingCount": {
+          "type": "number",
+          "description": "Total following count"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of account creation"
+        }
+      },
+      "required": ["uid", "name", "handle"]
+    },
+    "Video": {
+      "title": "Video",
+      "description": "TokiToki Short Video Post",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique video ID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Video title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Video caption and tags"
+        },
+        "authorId": {
+          "type": "string",
+          "description": "UID of the creator"
+        },
+        "authorHandle": {
+          "type": "string",
+          "description": "Creator handle"
+        },
+        "videoUrl": {
+          "type": "string",
+          "description": "URL of the uploaded/recorded video"
+        },
+        "likesCount": {
+          "type": "number",
+          "description": "Count of likes"
+        },
+        "commentsCount": {
+          "type": "number",
+          "description": "Count of comments"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Post timestamp"
+        }
+      },
+      "required": ["id", "authorId", "videoUrl"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile documents stored by user ID"
+    },
+    "/videos/{videoId}": {
+      "schema": "Video",
+      "description": "Public video feed documents"
+    }
+  }
+}

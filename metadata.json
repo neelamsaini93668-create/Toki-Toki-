@@ -1,0 +1,6 @@
+{
+  "name": "TokiToki (टोका-टोकी) - Short Video Platform",
+  "description": "टोका-टोकी (TokiToki) एक लोकप्रिय सोशल मीडिया प्लेटफॉर्म है जो छोटे वीडियो बनाने, देखने और शेयर करने के लिए जाना जाता है।",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
